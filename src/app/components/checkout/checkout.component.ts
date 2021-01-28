@@ -15,8 +15,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private paymentService: PaymentService,
     private router: Router) {
-    this.cards$ = this.paymentService.cardPayment$;
-    console.log(this.cards$);
+    this.cards$ = this.paymentService.cardsPayments$;
   }
 
   ngOnInit(): void {

@@ -1,6 +1,19 @@
 <div class="container mt-5">
+    <div *ngIf="(cards$ | async) as cards">
+        <div *ngFor="let card of cards">
+            <mat-horizontal-stepper>
+                <ng-template matStepLabel>Your cards</ng-template>
+                <div>
+                    <h2 *ngIf="cards.length === 0">There are no cards in the store</h2>
+                    <p>{{card.cardNumber}}</p>
+                </div>
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+
+
     <h1>Hi! Welcome to the Payment-app!</h1>
-    <h3>This is a tecnical exercise</h3>
+    <h3>This is a technical exercise</h3>
     <h3>Click in <span class="text-danger">Go to checkout</span> and see the result.</h3>
     <h3>Thank you for your oportunity!</h3>
     <p>Contact me:</p>

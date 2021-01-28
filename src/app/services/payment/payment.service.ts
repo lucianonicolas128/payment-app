@@ -11,12 +11,13 @@ import { environment } from '../../../environments/environment';
 export class PaymentService {
 
   private cards: Card[] = [];
-  private cardPayment = new BehaviorSubject<Card[]>([]);
-  cardPayment$ = this.cardPayment.asObservable();
+  private cardsPayments = new BehaviorSubject<Card[]>([]);
+  cardsPayments$ = this.cardsPayments.asObservable();
 
   constructor(
     private _http: HttpClient,
   ) {
+    
   }
 
   savePayment(card: Card): Observable<any> {
@@ -27,8 +28,8 @@ export class PaymentService {
   }
 
   addCard(card: Card) {
-    this.cards = [card];
-    this.cardPayment.next(this.cards);
+    this.cards = [...this.cards, card];
+    this.cardsPayments.next(this.cards);
   }
 
 }

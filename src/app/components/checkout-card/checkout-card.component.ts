@@ -42,14 +42,10 @@ export class CheckoutCardComponent implements OnInit {
 
 
   onSubmit(form: any) {
-    this.status = 'loading';
-
     this.expiredDate = new Date(this.year, this.month, 0);
-    console.log(this.expiredDate)
     this.card.expirationDate = this.expiredDate;
 
-    console.log(this.card);
-    this._paymentService.addCard(this.card);
+    this.addCard();
     this.router.navigate(['./checkout']);
 
   }
@@ -62,6 +58,10 @@ export class CheckoutCardComponent implements OnInit {
       securityCode: [''],
       amount: ['', [Validators.required]]
     });
+  }
+
+  addCard(){
+    this._paymentService.addCard(this.card);
   }
 
   getCardNumber(event: any) {

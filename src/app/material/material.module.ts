@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 
@@ -45,7 +46,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    MatSliderModule
+    MatSliderModule,
+    MatStepperModule,
 
   ],
   exports: [
@@ -67,7 +69,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    MatSliderModule
+    MatSliderModule,
+    MatStepperModule,
   ]
 })
 export class MaterialModule { }

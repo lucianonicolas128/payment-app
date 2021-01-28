@@ -12,6 +12,7 @@ import { slideInAnimation } from './animations';
 })
 export class AppComponent {
   title = 'payment-app';
+  ngOnInit(): void{}
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;

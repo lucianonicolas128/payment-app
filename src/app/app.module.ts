@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { CheckoutCardComponent } from './components/checkout-card/checkout-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './components/index/index.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { IndexComponent } from './components/index/index.component';
     IndexComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

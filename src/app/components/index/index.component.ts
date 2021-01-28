@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Card } from '../../models/card';
+import { PaymentService } from '../../services/payment/payment.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  cards$: Observable<Card[]>;
+  displayedColumns: string[] = ['cardNumber', 'cardHolder', 'amount'];
+
+
+
+  constructor(private paymentService: PaymentService){
+    this.cards$ = this.paymentService.cardsPayments$;
+  }
 
   ngOnInit(): void {
+    
   }
 
 }
