@@ -1,0 +1,16 @@
+<p>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span routerLink="/">Luciano Nicolás Prina - Frontend Developer (Angular)</span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="accent" class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon" routerLink="/checkout-payment">
+            <mat-icon>money</mat-icon> Go to checkout
+        </button>
+    </mat-toolbar>
+</p>
+<main [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>
