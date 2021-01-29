@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutComponent,
     data: {animation: 'checkout'}
+  },
+  {
+    path: '**',
+    component: IndexComponent
   }
 ];
 
